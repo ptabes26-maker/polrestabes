@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  /* Ini warna default (Light Mode) */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #171717; /* Ini warna hitam */
 }
 
 @theme inline {
@@ -12,12 +13,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* HAPUS BAGIAN @media (prefers-color-scheme: dark) ...
+   BIAR TEKS TIDAK BERUBAH JADI PUTIH SENDIRI 
+*/
 
 body {
   background: var(--background);
