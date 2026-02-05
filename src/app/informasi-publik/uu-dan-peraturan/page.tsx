@@ -108,7 +108,7 @@ export default function UUDanPeraturan() {
         </div>
       </div>
 
-      <FooterIP />
+  
     </div>
   );
 }

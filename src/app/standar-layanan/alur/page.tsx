@@ -117,7 +117,6 @@ export default function AlurLayananPage() {
         </div>
       </div>
 
-      <FooterIP />
     </div>
   );
 }

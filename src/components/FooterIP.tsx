@@ -1,38 +1,73 @@
-import { Shield, Phone, Mail, MapPin } from "lucide-react";
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function FooterIP() {
+  // Data Link - Nu isi manual mi di sini nanti link-nya
+  const footerLinks = [
+    { id: 1, img: "/images/footer/footer-1.png", alt: "Layanan Chat", url: "https://eppid.polri.go.id/informasi-publik/informasi-berkala" },
+    { id: 2, img: "/images/footer/footer-2.png", alt: "Penyimpanan Digital", url: "https://eppid.polri.go.id/layanan-polri-digital" },
+    { id: 3, img: "/images/footer/footer-3.png", alt: "Pertukaran Dokumen", url: "https://sisdivkum.id/library/peraturan-kepolisian" },
+  ];
+
   return (
-    <footer className="bg-slate-900 text-white pt-20 pb-10 px-4 border-t border-white/10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-yellow-500 rounded-xl flex items-center justify-center">
-              <Shield className="text-slate-900" size={24} />
+    <footer className="bg-[#2b59ff] pt-20 pb-10 px-4 overflow-hidden">
+      <div className="container mx-auto">
+        
+        {/* --- ILLUSTRATION SECTION (Clickable Images) --- */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-end mb-20">
+          {footerLinks.map((item) => (
+            <div key={item.id} className="flex justify-center">
+              <Link 
+                href={item.url} 
+                target={item.url.startsWith('http') ? "_blank" : "_self"}
+                className="relative w-64 h-48 md:w-80 md:h-60 group transition-all duration-500 hover:scale-110 active:scale-95"
+              >
+                {/* Efek Glow pas di-hover biar makin gagah */}
+                <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <Image 
+                  src={item.img} 
+                  alt={item.alt} 
+                  fill 
+                  className="object-contain relative z-10"
+                />
+                
+                {/* Tooltip sederhana biar user tau ini bisa di-klik */}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-blue-900 text-[8px] font-black px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-all uppercase tracking-widest whitespace-nowrap z-20">
+                  Buka Layanan
+                </div>
+              </Link>
             </div>
-            <h2 className="font-black text-xl tracking-tighter uppercase">E-PPID POLRI</h2>
+          ))}
+        </div>
+
+        {/* --- BOTTOM SECTION --- */}
+        <div className="border-t border-white/20 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <p className="text-white font-bold text-sm tracking-tight uppercase">
+              Copyright @ 2026 PPID-Polrestabes Makassar
+            </p>
+            <p className="text-blue-100 text-[10px] font-black uppercase tracking-[0.2em]">
+              Keterbukaan Informasi Publik - Presisi & Transparan
+            </p>
           </div>
-          <p className="text-slate-400 leading-relaxed font-medium">
-            Portal resmi Pejabat Pengelola Informasi dan Dokumentasi (PPID) Polrestabes Makassar. Melayani dengan transparansi dan akuntabilitas.
-          </p>
+
+          <div className="flex items-center gap-4">
+             <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-blue-900 transition-all shadow-xl">
+                <Instagram size={18} />
+             </Link>
+             <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-blue-900 transition-all shadow-xl">
+                <Facebook size={18} />
+             </Link>
+             <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-yellow-500 hover:text-blue-900 transition-all shadow-xl">
+                <Twitter size={18} />
+             </Link>
+          </div>
         </div>
 
-        <div className="space-y-6">
-          <h3 className="text-lg font-black uppercase tracking-widest text-yellow-500">Kontak Kami</h3>
-          <ul className="space-y-4 text-slate-400 font-medium">
-            <li className="flex items-center gap-3"><MapPin size={20} /> Jl. Ahmad Yani No.9, Makassar</li>
-            <li className="flex items-center gap-3"><Phone size={20} /> (0411) 3629216</li>
-            <li className="flex items-center gap-3"><Mail size={20} /> ppid@polrestabesmakassar.id</li>
-          </ul>
-        </div>
-
-        <div className="space-y-6">
-          <h3 className="text-lg font-black uppercase tracking-widest text-yellow-500">Jam Layanan</h3>
-          <p className="text-slate-400 font-medium">Senin - Kamis: 08.00 - 15.00 WITA<br/>Jumat: 08.00 - 15.30 WITA</p>
-        </div>
-      </div>
-      <div className="container mx-auto pt-10 border-t border-white/5 text-center text-slate-500 text-sm font-bold">
-        © 2026 POLRESTABES MAKASSAR. ALL RIGHTS RESERVED.
-      </div>
+      </div> 
     </footer>
   );
 }

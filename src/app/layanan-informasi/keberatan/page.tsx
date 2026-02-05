@@ -106,7 +106,7 @@ export default function PermohonanKeberatan() {
         </div>
       </div>
 
-      <FooterIP />
+     
     </div>
   );
 }

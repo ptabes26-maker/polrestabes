@@ -118,7 +118,7 @@ export default function InformasiBerkala() {
         </div>
       </div>
 
-      <FooterIP />
+
     </div>
   );
 }

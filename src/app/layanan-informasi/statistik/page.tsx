@@ -139,7 +139,7 @@ export default function StatistikLayanan() {
         </div>
       </div>
 
-      <FooterIP />
+
     </div>
   );
 }

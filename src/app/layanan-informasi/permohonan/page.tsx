@@ -141,7 +141,6 @@ export default function PermohonanInformasi() {
         </div>
       </div>
 
-      <FooterIP />
     </div>
   );
 }

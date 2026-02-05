@@ -125,7 +125,7 @@ export default function KontakPage() {
         </div>
       </div>
 
-      <FooterIP />
+
     </div>
   );
 }

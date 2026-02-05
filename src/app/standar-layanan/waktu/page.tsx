@@ -158,7 +158,6 @@ export default function WaktuPelayananPage() {
         </div>
       </div>
 
-      <FooterIP />
     </div>
   );
 }

@@ -94,7 +94,7 @@ export default function MaklumatPelayananPage() {
         </div>
       </div>
 
-      <FooterIP />
+     
     </div>
   );
 }

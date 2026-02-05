@@ -112,7 +112,7 @@ export default function RegulasiHubPage() {
         </div>
       </div>
 
-      <FooterIP />
+   
     </div>
   );
 }

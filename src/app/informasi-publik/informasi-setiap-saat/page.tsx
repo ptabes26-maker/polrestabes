@@ -147,7 +147,7 @@ export default function InformasiSetiapSaat() {
         </div>
       </div>
 
-      <FooterIP />
+    
     </div>
   );
 }

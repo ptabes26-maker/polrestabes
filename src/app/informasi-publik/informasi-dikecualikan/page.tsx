@@ -118,7 +118,7 @@ export default function InformasiDikecualikan() {
         </div>
       </div>
 
-      <FooterIP />
+     
     </div>
   );
 }

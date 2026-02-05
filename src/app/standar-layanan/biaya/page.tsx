@@ -97,7 +97,7 @@ export default function BiayaPelayananPage() {
         </div>
       </div>
 
-      <FooterIP />
+      
     </div>
   );
 }

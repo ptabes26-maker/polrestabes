@@ -109,7 +109,7 @@ export default function SengketaLayananPage() {
         </div>
       </div>
 
-      <FooterIP />
+      
     </div>
   );
 }

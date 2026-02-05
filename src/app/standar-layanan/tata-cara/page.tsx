@@ -109,7 +109,7 @@ export default function TataCaraPage() {
         </div>
       </div>
 
-      <FooterIP />
+      
     </div>
   );
 }

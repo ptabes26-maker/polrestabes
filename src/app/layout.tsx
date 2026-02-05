@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// GANTI Navbar LAMA DENGAN HeaderIP BARU
-import HeaderIP from "@/components/HeaderIP"; 
+import HeaderIP from "@/components/HeaderIP"; // Import Header
+import FooterIP from "@/components/FooterIP"; // Import Footer yang baru
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "E-PPID Polrestabes Makassar",
+  description: "Portal Resmi Informasi Publik Polrestabes Makassar",
+};
 
 export default function RootLayout({
   children,
@@ -12,15 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body className={`${inter.className} antialiased`}>
-        {/* Panggil HeaderIP di sini supaya muncul di semua halaman */}
+    <html lang="en">
+      <body className={inter.className}>
+        {/* Header muncul di paling atas di semua halaman */}
         <HeaderIP /> 
         
-        {/* pt-28 supaya konten Hero tidak tertutup Header yang sekarang makin lebar */}
-        <main className="pt-28 md:pt-36">
+        {/* Konten halaman nu akan muncul di sini */}
+        <main>
           {children}
         </main>
+
+        {/* Footer muncul di paling bawah di semua halaman */}
+        <FooterIP />
       </body>
     </html>
   );
