@@ -1,3 +1,6 @@
+"use client";
+import HeaderIP from "@/components/HeaderIP";
+import FooterIP from "@/components/FooterIP"; // Import Footer yang baru
 import { FileText, Download, Search, Info, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -13,21 +16,24 @@ export default function InformasiPublikPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       
-      {/* HEADER SECTION */}
-      <div className="relative bg-slate-900 pt-32 pb-24 px-4 overflow-hidden">
-        {/* --- TOMBOL KEMBALI (MELAYANG) --- */}
-        <div className="absolute top-8 left-4 md:left-10 z-50">
+      {/* 1. HEADER KHUSUS PPID */}
+      <HeaderIP />
+
+      {/* 2. HERO SECTION (Disesuaikan Padding-nya supaya pas) */}
+      <div className="relative bg-slate-900 pt-20 pb-24 px-4 overflow-hidden">
+        {/* Tombol Kembali (Opsional, ditaruh di bawah navbar) */}
+        <div className="container mx-auto mb-10">
             <Link 
               href="/" 
-              className="flex items-center gap-2 bg-white/10 hover:bg-white text-white hover:text-slate-900 px-5 py-2.5 rounded-full shadow-xl font-bold transition-all border border-white/20 backdrop-blur-md"
+              className="inline-flex items-center gap-2 text-slate-400 hover:text-white font-bold transition-all"
             >
-                <ArrowLeft size={20} />
-                <span>Kembali</span>
+                <ArrowLeft size={18} />
+                <span>Beranda Utama</span>
             </Link>
         </div>
 
         <div className="container relative z-10 mx-auto text-center">
-          <span className="text-yellow-500 font-black text-xs tracking-[0.4em] uppercase mb-4 block">E-PPID Portal</span>
+          <span className="text-yellow-500 font-black text-xs tracking-[0.4em] uppercase mb-4 block animate-pulse">Transparency Portal</span>
           <h1 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter">Informasi Publik</h1>
           
           <div className="max-w-2xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 p-2 rounded-[24px] flex items-center shadow-2xl">
@@ -44,7 +50,8 @@ export default function InformasiPublikPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 -mt-12 mb-32">
+      {/* 3. TABLE SECTION */}
+      <div className="container mx-auto px-4 -mt-12 mb-32 relative z-20">
         <div className="bg-white rounded-[40px] shadow-2xl overflow-hidden border border-slate-100">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
@@ -104,6 +111,9 @@ export default function InformasiPublikPage() {
           </div>
         </div>
       </div>
+
+      {/* 4. FOOTER */}
+      <FooterIP />
     </div>
   );
 }
